@@ -1,0 +1,22 @@
+<p>
+  <b>Child:</b>
+  <%= @chore.child.name %>
+</p>
+
+<p>
+  <b>Task:</b>
+  <%= @chore.task.name %>
+</p>
+
+<p>
+  <b>Due on:</b>
+  <%= @chore.due_on.strftime('%b %d') %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @chore.status %>
+</p>
+
+<%= link_to 'Edit', edit_chore_path(@chore) %> |
+<%= link_to 'Back', chores_path %>
