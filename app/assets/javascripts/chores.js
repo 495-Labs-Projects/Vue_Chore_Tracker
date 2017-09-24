@@ -21,6 +21,7 @@ $(document).on('ready', function() {
   Vue.component('chore-row', {
     // Defining where to look for the HTML template
     template: '#chore-row',
+
     // Passed elements to the component from the Vue instance
     props: {
       chore: Object,
@@ -46,13 +47,13 @@ $(document).on('ready', function() {
   })
 
   // A component for adding a new chore
-  Vue.component('new-chore-form', {
+  var new_form = Vue.component('new-chore-form', {
     template: '#new-chore-form',
     data: function () {
       return {
           child_id: 0,
           task_id: 0,
-          due_on: [], 
+          due_on: '', 
           completed: false
       }
     },
@@ -61,7 +62,7 @@ $(document).on('ready', function() {
         new_post = {
           child_id: this.child_id,
           task_id: this.task_id,
-          due_on: $('#chore_due_on_1i').val().concat('-',$('#chore_due_on_2i').val(),'-',$('#chore_due_on_3i').val()),
+          due_on: this.due_on,
           completed: this.completed
         }
         run_ajax('POST', {chore: new_post}, '/chores.js');
@@ -75,13 +76,7 @@ $(document).on('ready', function() {
     props: ['edit_id', 'child_id', 'task_id', 'completed'],
     data: function () {
       return {
-        due_on: [],
-        new_post: {
-          child_id: 1,
-          task_id: 1,
-          due_on: "2016-09-17", 
-          completed: false
-        }
+        due_on: ''
       }
     },
     methods: {
@@ -91,7 +86,7 @@ $(document).on('ready', function() {
           child_id: this.child_id,
           task_id: this.task_id,
           // Vue v-model for dates needs a workaround
-          due_on: $('#chore_due_on_1i').val().concat('-',$('#chore_due_on_2i').val(),'-',$('#chore_due_on_3i').val()), 
+          due_on: this.due_on, 
           completed: this.completed          
         }
         chores.edit_chore(new_post);
@@ -121,7 +116,7 @@ $(document).on('ready', function() {
     mounted: function (){
       this.get_chores();
       this.get_tasks(); 
-      this.get_children();   
+      this.get_children();
     },
     methods: {
       get_chores: function(){
@@ -169,6 +164,7 @@ $(document).on('ready', function() {
       },
       edit_chore: function (post) {
         run_ajax('PATCH', {chore: post}, '/chores/'.concat(this.edit_id, '.js'));
+        this.edit_modal_open = false;
       },
       remove_chore: function(id){
         run_ajax('DELETE', {chore: this.new_post}, '/chores/'.concat(id, '.js'));       

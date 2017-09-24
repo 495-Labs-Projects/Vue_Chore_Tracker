@@ -1138,3 +1138,1133 @@ TaskTest: test: Task should only allow numeric values for points.
 TaskTest: test: Task should require name to be set. 
 ----------------------------------------------------
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+ChildTest: test_: Child should have many chores. 
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------
+ChildTest: test_: Child should have many tasks through chores. 
+---------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------------
+ChildTest: test_: Child should require first_name to be set. 
+-------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------------
+ChildTest: test_: Child should require last_name to be set. 
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------------------------------------------------------
+ChildTest: test_: Creating a child context should have a method to find the points a child has earned. 
+-------------------------------------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (4.7ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:52 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')  [["child_id", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mChore Load (0.1ms)[0m  [1mSELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')[0m  [["child_id", 3]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mChore Load (0.0ms)[0m  [1mSELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')[0m  [["child_id", 2]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 7]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (4.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------------------------------------
+ChildTest: test_: Creating a child context should have a scope to alphabetize children. 
+----------------------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mChild Load (0.1ms)[0m  SELECT "children".* FROM "children" ORDER BY first_name, last_name
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (10.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------------------------------------------
+ChildTest: test_: Creating a child context should have a scope to select only active children. 
+-----------------------------------------------------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mChild Load (0.1ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------------------------------------------------------
+ChildTest: test_: Creating a child context should have name methods that list first_ and last_names combined. 
+--------------------------------------------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (5.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------------------
+ChoreTest: test_: Chore should allow due_on to be set to Fri, 22 Sep 2017. 
+---------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------------------
+ChoreTest: test_: Chore should allow due_on to be set to Sat, 23 Sep 2017. 
+---------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------------------
+ChoreTest: test_: Chore should allow due_on to be set to Sun, 24 Sep 2017. 
+---------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+------------------------------------------------
+ChoreTest: test_: Chore should belong to child. 
+------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+-----------------------------------------------
+ChoreTest: test_: Chore should belong to task. 
+-----------------------------------------------
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------------
+ChoreTest: test_: Chore should not allow due_on to be set to "bad". 
+--------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+----------------------------------------------------------------------
+ChoreTest: test_: Chore should not allow due_on to be set to 3.14159. 
+----------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should display the status of shoveling [@ac3] as 'Completed'. 
+---------------------------------------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should display the status of sweeping [@mc1] as 'Pending'. 
+------------------------------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (2.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should has a scope for done chores. 
+-------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "chores" WHERE (completed = 't')
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 7]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (2.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (3.9ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should has a scope for past chores. 
+-------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chores" WHERE (due_on < '2017-09-23')[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 4]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should has a scope for pending chores. 
+----------------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "chores" WHERE (completed = 'f')
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 5]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 2]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 7]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 2]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (3.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-----------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should has a scope for upcoming chores. 
+-----------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chores" WHERE (due_on >= '2017-09-23')[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 6]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (3.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+----------------------------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should has a scope to order alphabetically by task name. 
+----------------------------------------------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY tasks.name
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.0ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTask Load (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (4.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+-------------------------------------------------------------------------------------------------------
+ChoreTest: test_: Creating a chore context should has a scope to order chronologically by due_on date. 
+-------------------------------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Alex"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "children" ("active", "created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Rachel"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "children" ("created_at", "first_name", "last_name", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["first_name", "Mark"], ["last_name", "Heimann"], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sun, 24 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)  [["child_id", 1], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["child_id", 3], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Mon, 25 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Thu, 21 Sep 2017], ["task_id", 4], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 1], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "chores" ("child_id", "completed", "created_at", "due_on", "task_id", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["child_id", 3], ["completed", true], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["due_on", Sat, 23 Sep 2017], ["task_id", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 6]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "chores" WHERE "chores"."id" = ?  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "chores" WHERE "chores"."id" = ?[0m  [["id", 7]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "children" WHERE "children"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "children" WHERE "children"."id" = ?  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (4.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------------------------------
+TaskTest: test_: Creating a task context should have a scope to alphabetize tasks. 
+-----------------------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" ORDER BY name
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 4]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (4.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+------------------------------------------------------------------------------------------
+TaskTest: test_: Creating a task context should have a scope to select only active tasks. 
+------------------------------------------------------------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Wash dishes"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("active", "created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?, ?)  [["active", false], ["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Stack wood"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Sweep floor"], ["points", 1], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Shovel driveway"], ["points", 3], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tasks" ("created_at", "name", "points", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00], ["name", "Mow grass"], ["points", 2], ["updated_at", Sat, 23 Sep 2017 23:03:53 EDT -04:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTask Load (0.1ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't'[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "tasks" WHERE "tasks"."id" = ?  [["id", 3]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM "tasks" WHERE "tasks"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (9.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.3ms)[0m  begin transaction
+----------------------------------------------------------
+TaskTest: test_: Task should allow points to be set to 1. 
+----------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------------
+TaskTest: test_: Task should allow points to be set to 10. 
+-----------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------------
+TaskTest: test_: Task should allow points to be set to 100. 
+------------------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+----------------------------------------------------------------
+TaskTest: test_: Task should have many children through chores. 
+----------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------
+TaskTest: test_: Task should have many chores. 
+-----------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+------------------------------------------------------------------
+TaskTest: test_: Task should not allow points to be set to "bad". 
+------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------------------------------
+TaskTest: test_: Task should not allow points to be set to -2. 
+---------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------------------------
+TaskTest: test_: Task should not allow points to be set to 3.14159. 
+--------------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+------------------------------------------------------------
+TaskTest: test_: Task should only allow numbers for points. 
+------------------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------------------
+TaskTest: test_: Task should require name to be set. 
+-----------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
