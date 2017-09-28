@@ -39,7 +39,12 @@
 
 <div v-if="edit_modal_open">
   <h3>Edit Chore</h3>
-  <edit-chore-form :edit_id.sync="edit_id" :child_id.sync="child_id" :task_id.sync="task_id" :completed.sync="completed"></edit-chore-form>
+  <edit-chore-form 
+    :edit_id.sync="edit_id" 
+    :child_id.sync="child_id" 
+    :task_id.sync="task_id" 
+    :completed.sync="completed"
+    :due_on.sync="due_on"></edit-chore-form>
 </div>
 </span>
 

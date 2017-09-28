@@ -39048,3 +39048,349 @@ Started GET "/chores.json" for 127.0.0.1 at 2017-09-24 16:36:48 -0400
 Processing by ChoresController#index as JSON
   [1m[35mChore Load (0.4ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
 Completed 200 OK in 10ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-27 09:35:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChoresController#index as HTML
+  [1m[35mChore Load (0.6ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mChild Load (0.4ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (490.9ms)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (5.2ms)
+  Rendered chores/index.html.erb within layouts/application (503.6ms)
+Completed 200 OK in 644ms (Views: 598.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:35:48 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 35ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-27 09:35:48 -0400
+Processing by TasksController#index as JSON
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" ORDER BY name
+  Rendered tasks/index.json.jbuilder (9.0ms)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-27 09:35:48 -0400
+Processing by ChildrenController#index as JSON
+  [1m[36mChild Load (0.4ms)[0m  [1mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+Completed 200 OK in 18ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/children" for 127.0.0.1 at 2017-09-27 09:35:53 -0400
+Processing by ChildrenController#index as HTML
+  [1m[35mChild Load (0.4ms)[0m  SELECT "children".* FROM "children" ORDER BY first_name, last_name
+  [1m[36mChore Load (2.3ms)[0m  [1mSELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')[0m  [["child_id", 1]]
+  [1m[35mChore Load (0.1ms)[0m  SELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')  [["child_id", 3]]
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mChore Load (0.1ms)[0m  SELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')  [["child_id", 4]]
+  Rendered children/index.html.erb within layouts/application (63.0ms)
+Completed 200 OK in 80ms (Views: 75.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:35:53 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-27 09:35:53 -0400
+Processing by TasksController#index as JSON
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" ORDER BY name
+  Rendered tasks/index.json.jbuilder (2.2ms)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-27 09:35:53 -0400
+Processing by ChildrenController#index as JSON
+  [1m[36mChild Load (0.2ms)[0m  [1mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/children/new" for 127.0.0.1 at 2017-09-27 09:35:54 -0400
+Processing by ChildrenController#new as HTML
+  Rendered children/_form.html.erb (11.2ms)
+  Rendered children/new.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:35:55 -0400
+Processing by ChoresController#index as JSON
+  [1m[35mChore Load (0.3ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-27 09:35:55 -0400
+Processing by TasksController#index as JSON
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+  Rendered tasks/index.json.jbuilder (1.0ms)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-27 09:35:55 -0400
+Processing by ChildrenController#index as JSON
+  [1m[35mChild Load (0.2ms)[0m  SELECT "children".* FROM "children" ORDER BY first_name, last_name
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chores" for 127.0.0.1 at 2017-09-27 09:35:57 -0400
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[35mChild Load (0.3ms)[0m  SELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[36mTask Load (0.3ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name[0m
+  Rendered chores/_vue_form.html.erb (53.0ms)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__2395237873374978802_70101090457500 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name[0m
+  Rendered chores/_vue_form.html.erb (8.1ms)
+  Rendered chores/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 84ms (Views: 81.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:35:57 -0400
+Processing by ChoresController#index as JSON
+  [1m[35mChore Load (0.3ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-27 09:35:57 -0400
+Processing by TasksController#index as JSON
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+  Rendered tasks/index.json.jbuilder (1.1ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-27 09:35:57 -0400
+Processing by ChildrenController#index as JSON
+  [1m[35mChild Load (0.1ms)[0m  SELECT "children".* FROM "children" ORDER BY first_name, last_name
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/chores/138.js" for 127.0.0.1 at 2017-09-27 09:36:29 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"138", "child_id"=>"3", "task_id"=>"2", "due_on"=>"2017-09-19", "completed"=>"false", "created_at"=>"2017-09-19T17:12:00.446-04:00", "updated_at"=>"2017-09-19T17:31:36.095-04:00"}, "id"=>"138"}
+  [1m[36mChore Load (0.2ms)[0m  [1mSELECT "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT 1[0m  [["id", "138"]]
+Unpermitted parameters: id, created_at, updated_at
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = 138[0m  [["completed", false], ["updated_at", Wed, 27 Sep 2017 09:36:29 EDT -04:00]]
+  [1m[35m (30.5ms)[0m  commit transaction
+  Rendered chores/update.js.erb (0.4ms)
+Completed 200 OK in 45ms (Views: 5.8ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:36:29 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/chores/138.js" for 127.0.0.1 at 2017-09-27 09:36:30 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"138", "child_id"=>"3", "task_id"=>"2", "due_on"=>"2017-09-19", "completed"=>"true", "created_at"=>"2017-09-19T17:12:00.446-04:00", "updated_at"=>"2017-09-27T09:36:29.903-04:00"}, "id"=>"138"}
+  [1m[35mChore Load (0.1ms)[0m  SELECT "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT 1  [["id", "138"]]
+Unpermitted parameters: id, created_at, updated_at
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = 138  [["completed", true], ["updated_at", Wed, 27 Sep 2017 09:36:30 EDT -04:00]]
+  [1m[36m (30.5ms)[0m  [1mcommit transaction[0m
+  Rendered chores/update.js.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 6.5ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:36:30 -0400
+Processing by ChoresController#index as JSON
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/chores/138.js" for 127.0.0.1 at 2017-09-27 09:36:30 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"138", "child_id"=>"3", "task_id"=>"2", "due_on"=>"2017-09-19", "completed"=>"false", "created_at"=>"2017-09-19T17:12:00.446-04:00", "updated_at"=>"2017-09-27T09:36:30.268-04:00"}, "id"=>"138"}
+  [1m[36mChore Load (0.1ms)[0m  [1mSELECT "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT 1[0m  [["id", "138"]]
+Unpermitted parameters: id, created_at, updated_at
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = 138[0m  [["completed", false], ["updated_at", Wed, 27 Sep 2017 09:36:30 EDT -04:00]]
+  [1m[35m (31.6ms)[0m  commit transaction
+  Rendered chores/update.js.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 4.2ms | ActiveRecord: 32.1ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:36:30 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.2ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/chores/138.js" for 127.0.0.1 at 2017-09-27 09:36:30 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"138", "child_id"=>"3", "task_id"=>"2", "due_on"=>"2017-09-19", "completed"=>"true", "created_at"=>"2017-09-19T17:12:00.446-04:00", "updated_at"=>"2017-09-27T09:36:30.675-04:00"}, "id"=>"138"}
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT 1  [["id", "138"]]
+Unpermitted parameters: id, created_at, updated_at
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = 138  [["completed", true], ["updated_at", Wed, 27 Sep 2017 09:36:30 EDT -04:00]]
+  [1m[36m (23.6ms)[0m  [1mcommit transaction[0m
+  Rendered chores/update.js.erb (0.2ms)
+Completed 200 OK in 40ms (Views: 4.9ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-27 09:36:31 -0400
+Processing by ChoresController#index as JSON
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 10:36:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChoresController#index as HTML
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mChild Load (0.2ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (530.3ms)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (5.0ms)
+  Rendered chores/index.html.erb within layouts/application (544.3ms)
+Completed 200 OK in 701ms (Views: 654.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-28 10:36:28 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-28 10:36:28 -0400
+Processing by TasksController#index as JSON
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" ORDER BY name
+  Rendered tasks/index.json.jbuilder (5.4ms)
+Completed 200 OK in 15ms (Views: 12.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-28 10:36:28 -0400
+Processing by ChildrenController#index as JSON
+  [1m[36mChild Load (0.3ms)[0m  [1mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/chores/139.js" for 127.0.0.1 at 2017-09-28 10:36:30 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"139", "child_id"=>"4", "task_id"=>"1", "due_on"=>"2017-09-12", "completed"=>"true", "created_at"=>"2017-09-24T16:30:48.236-04:00", "updated_at"=>"2017-09-24T16:35:14.409-04:00"}, "id"=>"139"}
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT 1  [["id", "139"]]
+Unpermitted parameters: id, created_at, updated_at
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = 139  [["completed", true], ["updated_at", Thu, 28 Sep 2017 10:36:30 EDT -04:00]]
+  [1m[36m (30.5ms)[0m  [1mcommit transaction[0m
+  Rendered chores/update.js.erb (0.4ms)
+Completed 200 OK in 50ms (Views: 5.9ms | ActiveRecord: 31.8ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-28 10:36:30 -0400
+Processing by ChoresController#index as JSON
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/chores/139.js" for 127.0.0.1 at 2017-09-28 10:36:30 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"139", "child_id"=>"4", "task_id"=>"1", "due_on"=>"2017-09-12", "completed"=>"false", "created_at"=>"2017-09-24T16:30:48.236-04:00", "updated_at"=>"2017-09-28T10:36:30.322-04:00"}, "id"=>"139"}
+  [1m[36mChore Load (0.1ms)[0m  [1mSELECT "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT 1[0m  [["id", "139"]]
+Unpermitted parameters: id, created_at, updated_at
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = 139[0m  [["completed", false], ["updated_at", Thu, 28 Sep 2017 10:36:30 EDT -04:00]]
+  [1m[35m (29.5ms)[0m  commit transaction
+  Rendered chores/update.js.erb (0.1ms)
+Completed 200 OK in 40ms (Views: 4.7ms | ActiveRecord: 29.9ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-28 10:36:30 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.2ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 10:38:29 -0400
+Processing by ChoresController#index as HTML
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mChild Load (0.2ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (6.4ms)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (5.3ms)
+  Rendered chores/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 138ms (Views: 135.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-28 10:38:30 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.2ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-28 10:38:30 -0400
+Processing by TasksController#index as JSON
+  [1m[35mTask Load (0.3ms)[0m  SELECT "tasks".* FROM "tasks" ORDER BY name
+  Rendered tasks/index.json.jbuilder (1.2ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-28 10:38:31 -0400
+Processing by ChildrenController#index as JSON
+  [1m[36mChild Load (0.2ms)[0m  [1mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 10:40:51 -0400
+Processing by ChoresController#index as HTML
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mChild Load (0.2ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (8.0ms)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__764599936557298882_70141830683260 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (5.8ms)
+  Rendered chores/index.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 118ms (Views: 115.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-28 10:40:53 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.2ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-28 10:40:53 -0400
+Processing by TasksController#index as JSON
+  [1m[35mTask Load (0.2ms)[0m  SELECT "tasks".* FROM "tasks" ORDER BY name
+  Rendered tasks/index.json.jbuilder (1.8ms)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-28 10:40:53 -0400
+Processing by ChildrenController#index as JSON
+  [1m[36mChild Load (0.3ms)[0m  [1mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.3ms)

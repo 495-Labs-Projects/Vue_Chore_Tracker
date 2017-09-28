@@ -73,10 +73,9 @@ $(document).on('ready', function() {
   // A component for editing a chore
   var edit = Vue.component('edit-chore-form', {
     template: '#edit-chore-form',
-    props: ['edit_id', 'child_id', 'task_id', 'completed'],
+    props: ['edit_id', 'child_id', 'task_id', 'completed', 'due_on'],
     data: function () {
       return {
-        due_on: ''
       }
     },
     methods: {
@@ -109,6 +108,7 @@ $(document).on('ready', function() {
         child_id: 0,
         task_id: 0,
         completed: 0,
+        due_on: ''
       }
     },
     // This function runs after the elements on the page are set
@@ -160,6 +160,7 @@ $(document).on('ready', function() {
         this.child_id = chore['child_id'];
         this.task_id = chore['task_id'];
         this.completed = chore['completed'];
+        this.due_on = chore['due_on'];
         this.edit_modal_open = !(this.edit_modal_open)
       },
       edit_chore: function (post) {
