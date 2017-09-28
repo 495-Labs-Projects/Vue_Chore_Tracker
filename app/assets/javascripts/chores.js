@@ -73,18 +73,18 @@ $(document).on('ready', function() {
   // A component for editing a chore
   var edit = Vue.component('edit-chore-form', {
     template: '#edit-chore-form',
-    props: ['edit_id', 'child_id', 'task_id', 'completed', 'due_on'],
-    data: function () {
-      return {
-      }
+    props: {
+      edit_id: Number,
+      child_id: Number,
+      task_id: Number,
+      completed: Boolean,
+      due_on: String
     },
     methods: {
       submitForm: function (id) {
-        // Need to use the ID kept in the vue instance, so pass up
         var new_post = {
           child_id: this.child_id,
           task_id: this.task_id,
-          // Vue v-model for dates needs a workaround
           due_on: this.due_on, 
           completed: this.completed          
         }

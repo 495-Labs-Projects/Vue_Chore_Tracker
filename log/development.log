@@ -39394,3 +39394,40 @@ Started GET "/children.json" for 127.0.0.1 at 2017-09-28 10:40:53 -0400
 Processing by ChildrenController#index as JSON
   [1m[36mChild Load (0.3ms)[0m  [1mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
 Completed 200 OK in 6ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-28 10:45:03 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ChoresController#index as HTML
+  [1m[35mChore Load (0.2ms)[0m  SELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__248912744309515917_70148012114360 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mChild Load (0.4ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__248912744309515917_70148012114360 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mTask Load (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (517.2ms)
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__248912744309515917_70148012114360 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:17)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "children".* FROM "children" WHERE "children"."active" = 't' ORDER BY first_name, last_name[0m
+DEPRECATION WARNING: Relation#all is deprecated. If you want to eager-load a relation, you can call #load (e.g. `Post.where(published: true).load`). If you want to get an array of records from a relation, you can call #to_a (e.g. `Post.where(published: true).to_a`). (called from block in _app_views_chores__vue_form_html_erb__248912744309515917_70148012114360 at /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/views/chores/_vue_form.html.erb:21)
+  [1m[35mCACHE (0.1ms)[0m  SELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = 't' ORDER BY name
+  Rendered chores/_vue_form.html.erb (5.9ms)
+  Rendered chores/index.html.erb within layouts/application (532.9ms)
+Completed 200 OK in 753ms (Views: 710.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/chores.json" for 127.0.0.1 at 2017-09-28 10:45:05 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 29ms (Views: 22.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/children.json" for 127.0.0.1 at 2017-09-28 10:45:05 -0400
+Processing by ChildrenController#index as JSON
+  [1m[35mChild Load (0.3ms)[0m  SELECT "children".* FROM "children" ORDER BY first_name, last_name
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tasks.json" for 127.0.0.1 at 2017-09-28 10:45:05 -0400
+Processing by TasksController#index as JSON
+  [1m[36mTask Load (0.2ms)[0m  [1mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+  Rendered tasks/index.json.jbuilder (11.3ms)
+Completed 200 OK in 24ms (Views: 21.0ms | ActiveRecord: 0.2ms)
