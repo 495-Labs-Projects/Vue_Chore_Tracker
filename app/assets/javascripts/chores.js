@@ -1,6 +1,15 @@
+var init;
+
+var initialize = function(){
+  if (init){
+    init();
+  }
+}
+
 // app/assets/javascripts/chores.js
 $(document).on('ready', function() {
 
+  init = function(){
   // General template function for running AJAX calls through Vue.JS
   run_ajax = function(method, data, link, callback=function(res){chores.get_chores()}){
     $.ajax({
@@ -172,5 +181,7 @@ $(document).on('ready', function() {
       }
     },
   });
+  }
+  init();
 });
 

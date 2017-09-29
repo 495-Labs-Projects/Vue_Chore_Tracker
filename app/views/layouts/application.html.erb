@@ -4,6 +4,7 @@
   <title>ChoreTracker :: <%= controller.controller_name.capitalize %></title>
   <link rel="shortcut icon" href="/gc_favicon.ico" type="image/x-icon" />
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -26,6 +27,5 @@
       <%= yield %>
     </div> <!-- end of body div -->
   </div><!-- end of wrap div -->
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 </body>
 </html>
