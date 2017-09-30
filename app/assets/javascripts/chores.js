@@ -45,8 +45,8 @@ $(document).on('ready', function() {
       switch_edit_modal: function(id){
         chores.switch_edit_modal(id);
       },
-      remove_record: function(id){
-        chores.remove_chore(id);
+      remove_record: function(chore){
+        run_ajax('DELETE', {chore: chore}, '/chores/'.concat(chore['id'], '.js'));       
       },
       toggle_complete: function (chore){
         chore['completed'] = !(chore['completed']);
