@@ -10,7 +10,7 @@ Before going any further, it is worth keeping the [Vue.JS documentation](https:/
 
 For this lab, we are going to implement several features using Vue.JS into the Chore Tracker lab from before. If you would like to use your previous Chore Tracker solution, go ahead, however the code portions from the lab will be based off of the starter code here, so keep that in mind. If you don't have a strong preference for using your previous code, it is recommended to simply clone the starter code repository.
 
-1. Either locate your previous lab directory or clone the starter code repository. **If you clone from the starter code repository be sure to remove any remote connections on the repository**!
+1. Either locate your previous lab directory or clone the [starter code repository](https://github.com/jestapinski/VueChoreTrackerStarter). **If you clone from the starter code repository be sure to remove any remote connections on the repository**!
 
 	Now that we have our rails project, we have to do some small setup to add the Vue.JS framework to our project.
 
@@ -65,10 +65,19 @@ The first thing we need to do is add the base Vue instance to our application. T
 
 1. Wrap a div around the table in `chores#index` with `id="chores_list"` (generally, giving everything in an app an id is good practice anyway, but don't worry about this now).
 
-2. Now, we will go ahead and add in our Vue.JS instance to get the fun started. Open `app/assets/javascripts/chores.js` and define a new Vue instance defined as `chores` by such:
+2. Now, we will go ahead and add in our Vue.JS instance to get the fun started. Open `app/assets/javascripts/chores.js`. First, add some code to load Vue after all other content on the webpage:
 
 	```js
-	var chores = //Code to instantiate a blank, new instance of Vue.JS
+	$(document).on('ready', function() {
+		// Code we will add next!
+	}
+	```
+Define a new Vue instance defined as `chores` by such:
+	```js
+	//Code to instantiate a blank, new instance of Vue.JS
+	var chores = new Vue({
+		// Keys, values go here
+	});
 	```
 
 	Now for the keys within the object we pass as an argument when defining a Vue instance. 
@@ -122,9 +131,9 @@ The first thing we need to do is add the base Vue instance to our application. T
 
 	Note we have a `chore` prop, which is the Chore object which will be passed to the component. No, we can start to write the general HTML template for the `chore-row` component. 
 
-6. At the bottom of the `Chore#index` view file, add the following template code:
+6. At the bottom of the `Chore#index` view file, add the following template code (At the very bottom, not wrapped in any tags!):
 
-	```ejs
+	```erb
 	<!-- Defining Vue templates to work with components -->
 	<script type="text/x-template" id="chore-row">
 	    <tr>
@@ -198,7 +207,7 @@ The first thing we need to do is add the base Vue instance to our application. T
 
 	Now, we need to modify the form for adding a new chore so it shows up dynamically at the bottom of the page without any kind of redirect. 
 
-11. The existing button links to the `chores#new` page, so we should get rid of that button from the `chores#index` page. Replace it with this new button:
+11. The existing button links to the `chores#new` page, so we should get rid of that button from the `chores#index` page. Replace it with this new button within the `chores_list` div:
 	```html
 	<!-- v-on:click binds a function to a clicking action -->
 	<button v-on:click="switch_modal()">Add Chore</button>
@@ -229,15 +238,14 @@ The first thing we need to do is add the base Vue instance to our application. T
 
 	This will conditionally render a component we are about to define called `new-chore-form`. 
 
-15. Let's write the template for this form at the bottom of `chores#index`:
+15. Let's write the template for this form at the bottom of `chores#index` (At the very bottom, not wrapped in any tags!):
 
 	```erb
 	<!-- Component to add a new form -->
 	<script type="text/x-template" id="new-chore-form">
 	  <div>
-	<% @chore = Chore.new() %>
-	<%= render 'vue_form' %>
-
+		<% @chore = Chore.new() %>
+		<%= render 'vue_form' %>
 	  </div>
 	</script>
 	```
@@ -272,7 +280,7 @@ The first thing we need to do is add the base Vue instance to our application. T
 
 	Note how we have data variables for the main fields of Chore, and combine them all into one object when we run our POST request to add a new Chore.
 
-16. Now, let's create a new file to manage our Vue.JS new form: `app/views/chores/_vue_form.js`. Within this file, add the following partial code to create our form:
+16. Now, let's create a new file to manage our Vue.JS new form: `app/views/chores/_vue_form.html.erb`. Within this file, add the following partial code to create our form:
 
 	```erb
 	<!-- Form template using Vue for adding and editing chores -->
@@ -324,7 +332,7 @@ The first thing we need to do is add the base Vue instance to our application. T
 
 Oh, it isn't! Figure out where in the form we are missing something and add it in (Hint: Check out some of the HTML properties of other elements of the form, what is the date input missing?).
 
-Now the form should add a new row to the ist of chores upone clicking `Submit`. Perhaps one small UX improvement would be to hide the form upone clicking `Submit`. Knowing we call the `submitForm` method upon clicking `Submit`, modify this to hide the New Chore Form upon submitting.
+Now the form should add a new row to the list of chores upon clicking `Submit`. Perhaps one small UX improvement would be to hide the form upon clicking `Submit`. Knowing we call the `submitForm` method upon clicking `Submit`, modify this to hide the New Chore Form upon submitting.
 
 # Stop
 Make sure a TA has verified that you can add a new chore into Chore Tracker using a Vue.JS form (no reloads should be happening).
