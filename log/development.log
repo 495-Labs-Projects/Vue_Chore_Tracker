@@ -42673,3 +42673,495 @@ Started GET "/children.json" for 127.0.0.1 at 2017-09-30 12:02:19 -0400
 Processing by ChildrenController#index as JSON
   [1m[36mChild Load (0.3ms)[0m  [1mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
 Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+Started GET "/" for ::1 at 2018-03-31 14:46:47 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.4ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (556.8ms)
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (6.8ms)
+  Rendered chores/index.html.erb within layouts/application (570.2ms)
+Completed 500  in 2085ms (ActiveRecord: 3.3ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/images
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/stylesheets
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/images:
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__581568582734513206_70305931954360'
+
+Started POST "/__better_errors/1c2aea954842d9b2/variables" for ::1 at 2018-03-31 14:46:49 -0400
+Started GET "/" for ::1 at 2018-03-31 14:47:41 -0400
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (5.5ms)
+  [1m[36mCACHE Child Load (0.0ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (3.8ms)
+  Rendered chores/index.html.erb within layouts/application (14.0ms)
+Completed 500  in 46ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/images
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/stylesheets
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/images:
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__581568582734513206_70305987731660'
+
+Started POST "/__better_errors/f24c3e1b37b1ddb1/variables" for ::1 at 2018-03-31 14:47:41 -0400
+Started GET "/" for ::1 at 2018-03-31 14:47:43 -0400
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (4.9ms)
+  [1m[36mCACHE Child Load (0.0ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (4.8ms)
+  Rendered chores/index.html.erb within layouts/application (14.1ms)
+Completed 500  in 55ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/images
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/stylesheets
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/images:
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__581568582734513206_70305933750380'
+
+Started POST "/__better_errors/0e0449d93081a450/variables" for ::1 at 2018-03-31 14:47:43 -0400
+Started GET "/" for ::1 at 2018-03-31 14:47:54 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.4ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (520.6ms)
+  [1m[36mChild Load (0.3ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (4.7ms)
+  Rendered chores/index.html.erb within layouts/application (530.9ms)
+Completed 500  in 810ms (ActiveRecord: 3.8ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'turbolinks' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/images
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/stylesheets
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/images:
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__4044607789398371880_70168484261460'
+
+Started POST "/__better_errors/541449a8299014ba/variables" for ::1 at 2018-03-31 14:47:55 -0400
+Started GET "/" for ::1 at 2018-03-31 14:49:04 -0400
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (5.1ms)
+  [1m[36mCACHE Child Load (0.0ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (3.6ms)
+  Rendered chores/index.html.erb within layouts/application (12.9ms)
+Completed 500  in 56ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'vue' with type 'application/javascript'
+Checked in these paths: 
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/images
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/app/assets/stylesheets
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/javascripts
+  /Users/jordanstapinski/Desktop/67495/Vue_Chore_Tracker/vendor/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-ui-rails-6.0.1/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actioncable-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/actionview-5.1.6/lib/assets/compiled
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-sass-0.100.2/app/assets/images
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/stylesheets
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/javascripts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/fonts
+  /Users/jordanstapinski/.rvm/gems/ruby-2.4.1/gems/materialize-form-1.0.8/app/assets/images:
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb__4044607789398371880_70168537650960'
+
+Started POST "/__better_errors/21fb5a00408e85e2/variables" for ::1 at 2018-03-31 14:49:05 -0400
+Started GET "/" for ::1 at 2018-03-31 14:49:55 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (530.3ms)
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (5.2ms)
+  Rendered chores/index.html.erb within layouts/application (540.7ms)
+Completed 200 OK in 3014ms (Views: 2965.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.self-16c585b363bd08690d21b5afcb5f664fd1ce3aa6deda726f953a619cf082b33b.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/children.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/tasks.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/chores.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/layout.self-c1210797bdfc60b6005651a62a8941fb09fae84434b9600738efc70ce11a03dc.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/datagrid.self-9131fb3496fc07b744a23b57143727e48b4097da238b14978695989a23b772cf.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/scaffolds.self-68251fbf65f1cb479e14d67e835e0e7d8a479ca8b65cffc64aadee1d9b64f153.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/text.self-c71b19d0be4180c9008d18fcff34e800ab2e84ea5049736aa067ddf46550a226.css?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/children.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/chores.self-54909b0b22353f6ee72b49c0189566848be759c75e435c86cc2b43702142c17b.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/tasks.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/dist/vue.self-15c2aa2cbeae74a0a82f727ef8ac94f5d810949f6b9a9dcbb1c9c407f812fe15.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/vue.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/application.self-85a3df08aab34bc6a22c0cf18bd349b5a3fda5edca3e6dead5e0390446173b12.js?body=1" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/assets/qu_vu-104646446fbe042c2f440998bcd6dc5c61072aec3f3e9a2acb5c293507169e90.jpg" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/chores.json" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/tasks.json" for ::1 at 2018-03-31 14:49:58 -0400
+Started GET "/children.json" for ::1 at 2018-03-31 14:49:58 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.5ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 11ms (Views: 2.3ms | ActiveRecord: 0.5ms)
+
+
+Processing by ChildrenController#index as JSON
+Processing by TasksController#index as JSON
+  [1m[36mChild Load (0.3ms)[0m  [1m[34mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+  Rendering tasks/index.json.jbuilder
+  Rendered tasks/index.json.jbuilder (6.1ms)
+Completed 200 OK in 31ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/chores/139.js" for ::1 at 2018-03-31 14:50:01 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"139", "child_id"=>"4", "task_id"=>"1", "due_on"=>"2017-09-12", "completed"=>"true", "created_at"=>"2017-09-24T16:30:48.236-04:00", "updated_at"=>"2017-09-28T10:36:30.701-04:00"}, "id"=>"139"}
+  [1m[36mChore Load (0.7ms)[0m  [1m[34mSELECT  "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT ?[0m  [["id", 139], ["LIMIT", 1]]
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = ?[0m  [["completed", "t"], ["updated_at", "2018-03-31 18:50:01.530120"], ["id", 139]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chores/update.js.erb
+  Rendered chores/update.js.erb (0.3ms)
+Completed 200 OK in 45ms (Views: 9.6ms | ActiveRecord: 14.1ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:01 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/chores/139.js" for ::1 at 2018-03-31 14:50:01 -0400
+Processing by ChoresController#update as JS
+  Parameters: {"chore"=>{"id"=>"139", "child_id"=>"4", "task_id"=>"1", "due_on"=>"2017-09-12", "completed"=>"false", "created_at"=>"2017-09-24T16:30:48.236-04:00", "updated_at"=>"2018-03-31T14:50:01.530-04:00"}, "id"=>"139"}
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT  "chores".* FROM "chores" WHERE "chores"."id" = ? LIMIT ?[0m  [["id", 139], ["LIMIT", 1]]
+Unpermitted parameters: :id, :created_at, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "chores" SET "completed" = ?, "updated_at" = ? WHERE "chores"."id" = ?[0m  [["completed", "f"], ["updated_at", "2018-03-31 18:50:02.009957"], ["id", 139]]
+  [1m[35m (17.8ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chores/update.js.erb
+  Rendered chores/update.js.erb (0.4ms)
+Completed 200 OK in 46ms (Views: 16.1ms | ActiveRecord: 18.8ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:02 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/chores.js" for ::1 at 2018-03-31 14:50:11 -0400
+Processing by ChoresController#create as JS
+  Parameters: {"chore"=>{"child_id"=>"3", "task_id"=>"1", "due_on"=>"2018-03-13", "completed"=>"true"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "chores" ("child_id", "task_id", "due_on", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["child_id", 3], ["task_id", 1], ["due_on", "2018-03-13"], ["completed", "t"], ["created_at", "2018-03-31 18:50:11.996350"], ["updated_at", "2018-03-31 18:50:11.996350"]]
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering chores/create.js.erb
+  Rendered chores/create.js.erb (0.3ms)
+Completed 200 OK in 34ms (Views: 8.3ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:12 -0400
+Processing by ChoresController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chores" for ::1 at 2018-03-31 14:50:14 -0400
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.3ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (6.0ms)
+  [1m[36mCACHE Child Load (0.0ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (4.8ms)
+  Rendered chores/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 56ms (Views: 51.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:15 -0400
+Processing by ChoresController#index as JSON
+Started GET "/tasks.json" for ::1 at 2018-03-31 14:50:15 -0400
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Processing by TasksController#index as JSON
+Started GET "/children.json" for ::1 at 2018-03-31 14:50:15 -0400
+Completed 200 OK in 16ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+Processing by ChildrenController#index as JSON
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+  Rendering tasks/index.json.jbuilder
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 0.5ms)
+
+
+  Rendered tasks/index.json.jbuilder (0.9ms)
+Completed 200 OK in 33ms (Views: 14.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/children" for ::1 at 2018-03-31 14:50:16 -0400
+Processing by ChildrenController#index as HTML
+  [1m[36mChild Load (0.3ms)[0m  [1m[34mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+  Rendering children/index.html.erb within layouts/application
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')[0m  [["child_id", 1]]
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')[0m  [["child_id", 3]]
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT  "tasks".* FROM "tasks" WHERE "tasks"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" WHERE "chores"."child_id" = ? AND (completed = 't')[0m  [["child_id", 4]]
+  Rendered children/index.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 100ms (Views: 93.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:16 -0400
+Processing by ChoresController#index as JSON
+Started GET "/tasks.json" for ::1 at 2018-03-31 14:50:16 -0400
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Processing by TasksController#index as JSON
+Started GET "/children.json" for ::1 at 2018-03-31 14:50:16 -0400
+Completed 200 OK in 15ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+Processing by ChildrenController#index as JSON
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+  Rendering tasks/index.json.jbuilder
+Completed 200 OK in 10ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+  Rendered tasks/index.json.jbuilder (3.0ms)
+Completed 200 OK in 38ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chores" for ::1 at 2018-03-31 14:50:17 -0400
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.3ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (7.9ms)
+  [1m[36mCACHE Child Load (0.1ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (7.7ms)
+  Rendered chores/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 67ms (Views: 61.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:17 -0400
+Started GET "/tasks.json" for ::1 at 2018-03-31 14:50:17 -0400
+Started GET "/children.json" for ::1 at 2018-03-31 14:50:17 -0400
+Processing by ChoresController#index as JSON
+Processing by TasksController#index as JSON
+Processing by ChildrenController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+  Rendering tasks/index.json.jbuilder
+Completed 200 OK in 18ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+  Rendered tasks/index.json.jbuilder (0.9ms)
+Completed 200 OK in 24ms (Views: 14.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tasks" for ::1 at 2018-03-31 14:50:18 -0400
+Processing by TasksController#index as HTML
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+  Rendering tasks/index.html.erb within layouts/application
+  Rendered tasks/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 51.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:19 -0400
+Started GET "/tasks.json" for ::1 at 2018-03-31 14:50:19 -0400
+Processing by ChoresController#index as JSON
+Started GET "/children.json" for ::1 at 2018-03-31 14:50:19 -0400
+Processing by TasksController#index as JSON
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Processing by ChildrenController#index as JSON
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+Completed 200 OK in 17ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mChild Load (0.5ms)[0m  [1m[34mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+Completed 200 OK in 16ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+  Rendering tasks/index.json.jbuilder
+  Rendered tasks/index.json.jbuilder (1.4ms)
+Completed 200 OK in 37ms (Views: 22.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/chores" for ::1 at 2018-03-31 14:50:19 -0400
+Processing by ChoresController#index as HTML
+  [1m[36mChore Load (0.2ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+  Rendering chores/index.html.erb within layouts/application
+  [1m[36mChild Load (0.3ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mTask Load (0.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (10.5ms)
+  [1m[36mCACHE Child Load (0.0ms)[0m  [1m[34mSELECT "children".* FROM "children" WHERE "children"."active" = ? ORDER BY first_name, last_name[0m  [["active", "t"]]
+  [1m[36mCACHE Task Load (0.0ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."active" = ? ORDER BY name[0m  [["active", "t"]]
+  Rendered chores/_vue_form.html.erb (4.5ms)
+  Rendered chores/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 85ms (Views: 76.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/chores.json" for ::1 at 2018-03-31 14:50:19 -0400
+Processing by ChoresController#index as JSON
+Started GET "/tasks.json" for ::1 at 2018-03-31 14:50:19 -0400
+  [1m[36mChore Load (0.3ms)[0m  [1m[34mSELECT "chores".* FROM "chores" INNER JOIN "tasks" ON "tasks"."id" = "chores"."task_id" ORDER BY due_on, tasks.name[0m
+Started GET "/children.json" for ::1 at 2018-03-31 14:50:19 -0400
+Processing by TasksController#index as JSON
+Completed 200 OK in 15ms (Views: 1.2ms | ActiveRecord: 0.3ms)
+
+
+Processing by ChildrenController#index as JSON
+  [1m[36mTask Load (0.4ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" ORDER BY name[0m
+  [1m[36mChild Load (0.2ms)[0m  [1m[34mSELECT "children".* FROM "children" ORDER BY first_name, last_name[0m
+  Rendering tasks/index.json.jbuilder
+Completed 200 OK in 13ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+  Rendered tasks/index.json.jbuilder (1.3ms)
+Completed 200 OK in 22ms (Views: 13.7ms | ActiveRecord: 0.4ms)
+
+

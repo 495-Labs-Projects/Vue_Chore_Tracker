@@ -1,5 +1,7 @@
 ## 67-272: ChoreTracker UX Improvements with Vue.JS ##
 
+**Feedback Link:** https://docs.google.com/a/andrew.cmu.edu/spreadsheets/d/1_vbyn_yYRYsXzdn0TDVsI1rEph86UBo2bDtw3G2zZhI/edit?usp=sharing
+
 This is a lab project for 67-272: Application Design and Development.  The primary objectives of this lab are (1) to give students experience discovering pain points in existing applications and (2) to give students hands-on experience incorporating view components into an existing project using Vue.JS.
 
 As seen in lecture, we can leverage the Vue.JS framework to allow for cool, dynamic effects on the front-end of our application. Part of the reason we may wish to use something like Vue.JS would be to improve the user experience (or UX for short) of an application. Nowadays, the demand for instantaneous results is higher than ever. We want to complete everything in a short of a time as we possibly can. Vue.JS supports this outlook onto completing tasks.
@@ -22,12 +24,12 @@ For this lab, we are going to implement several features using Vue.JS into the C
 	```
 	and then `bundle install`. Make sure the gems installed without any issues!
 
-3. In your `app/assets/javascrips/application.js` file, add the following line:
+3. In your `app/assets/javascripts/application.js` file, add the following line:
 	```js
 	//= require vue
 	```
 
-4. Run `rails server` and check to see Chore Tracker is running properly in your browser. Also check the javascript console in the browser and make sure there are no errors. Ask a TA if you are not sure how to open the javascript console in your browser.
+4. Run `rails db:migrate` and then `rails server` and check to see Chore Tracker is running properly in your browser. Also check the javascript console in the browser and make sure there are no errors. Ask a TA if you are not sure how to open the javascript console in your browser.
 
 5. If you are using Google Chrome and have not done so, consider installing the [Vue.JS DevTools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en), as it allows for properly checking components and their state, in real-time.
 
@@ -35,11 +37,13 @@ For this lab, we are going to implement several features using Vue.JS into the C
 
 **Add and commit your work to Git if you have not done so already.**
 
-## Part 2: Pain Points
+## Part 2: Pain Points (SKIP THIS TONIGHT)
 
 Now we will spend some time re-familiarizing ourselves with the initial pain points of the Chore Tracker application. We are taking an *iterative refinement* approach to developing Chore Tracker: First we were concerned with simply building a working application, and now we are ready to improve it from a UX standpoint.
 
 *This is actually a really important skill to use in industry since stakeholders are looking for results, and then improvement. The sooner you can have something working (some Minimal Viable Product), the better!*
+
+### SKIP THIS SECTION AND GO TO PART 3 TONIGHT
 
 1. Go through and add a new chore to the chores list (you can add new tasks and children if you wish, but just go ahead and add a chore).
 
@@ -59,19 +63,21 @@ Now we will start using Vue.JS to manipulate the means by which we perform actio
 
 Also, it is worth acknowledging the forms could use a facelift (from a CSS standpoint), but again we are only concerned with Vue.JS interactions at this point.
 
-*Add the base Vue instance and verify*
+### Adding the base Vue instance and verify
 
 The first thing we need to do is add the base Vue instance to our application. This is going to handle the overall state of the application, but for now we will condense the scope of the instance to be the body of the Chores table found in `chores#index`. 
 
 1. Wrap a div around the table in `chores#index` with `id="chores_list"` (generally, giving everything in an app an id is good practice anyway, but don't worry about this now).
 
-2. Now, we will go ahead and add in our Vue.JS instance to get the fun started. Open `app/assets/javascripts/chores.js`. First, add some code to load Vue after all other content on the webpage:
+2. Now, we will go ahead and add in our Vue.JS instance to get the fun started. Open `app/assets/javascripts/chores.js`. We don't need to add anything else to our application to link this javascript file, as the `//= require_tree .` in `application.js` does this for us. First, add some code to load Vue after all other content on the webpage:
 
 	```js
 	$(document).on('ready', function() {
 		// Code we will add next!
-	}
+	    }
+    );
 	```
+**Note that all of the javascript code we will write in this file must go in the body of this** `$(document).on('ready', ...` **function**!!
 Define a new Vue instance defined as `chores` by such:
 	```js
 	//Code to instantiate a blank, new instance of Vue.JS
@@ -91,13 +97,10 @@ Define a new Vue instance defined as `chores` by such:
 4. Now, we will want to define our `data` field to keep track of state variables. The only thing we will have for now is an array of chores, which we will initialize to be empty:
 	```js
 	// within the code to define the instance of Vue assigned to the variable chores
-	data(){
-		return {
-			chores: []
-		}
-	}
+	data: {
+	        chores: []
+	      }
 	```
-	Notice how here we define data as a function. This is new in Vue 2.X and is the preferred way of representing `data` variables for instance state.
 
 	This is good for the Vue instance, for now. We will add fields and methods in a bit.
 
@@ -129,7 +132,7 @@ Define a new Vue instance defined as `chores` by such:
 	  })
 	```
 
-	Note we have a `chore` prop, which is the Chore object which will be passed to the component. No, we can start to write the general HTML template for the `chore-row` component. 
+	Note we have a `chore` prop, which is the Chore object which will be passed to the component. Now, we can start to write the general HTML template for the `chore-row` component. 
 
 6. At the bottom of the `Chore#index` view file, add the following template code (At the very bottom, not wrapped in any tags!):
 
@@ -169,10 +172,10 @@ Define a new Vue instance defined as `chores` by such:
 
 	There is only one issue, the `chores` variable in the Vue instance is always empty! We need to populate it. Here, we will use AJAX to perform a `GET` request to get all the chores. 
 
-8. Add the following method to the top of your `chores.js` file:
+8. Add the following method to the top of your `chores.js` file (under `document.on('ready'...))` since we need the page to load prior to running our javascript code:
 
 	```js
-	run_ajax = function(method, data, link, callback=function(res){chores.get_chores()}){
+	function run_ajax(method, data, link, callback=function(res){chores.get_chores()}){
 		$.ajax({
 		  method: method,
 		  data: data,
@@ -193,7 +196,7 @@ Define a new Vue instance defined as `chores` by such:
 	```js
 	get_chores: function(){
 		run_ajax('GET', {}, '/chores.json', function(res){chores.chores = res});
-	},
+	}
 	```
 
 10. Then, add the `mounted` property to the Vue instance (`mounted: function(){}`) and within add the following line:
@@ -207,7 +210,7 @@ Define a new Vue instance defined as `chores` by such:
 
 	Now, we need to modify the form for adding a new chore so it shows up dynamically at the bottom of the page without any kind of redirect. 
 
-11. The existing button links to the `chores#new` page, so we should get rid of that button from the `chores#index` page. Replace it with this new button within the `chores_list` div:
+11. The existing button links to the `chores#new` page, so we should get rid of that button from the `chores#index` page. Replace it with this new button **within the `chores_list` div and the `chores_list` tag**:
 	```html
 	<!-- v-on:click binds a function to a clicking action -->
 	<button v-on:click="switch_modal()">Add Chore</button>
@@ -324,7 +327,7 @@ Define a new Vue instance defined as `chores` by such:
 	format.js
 	```
 
-	to the `create` action and add the corresponding create.js.erb file in the Chores view directory.
+	to the `create` action after each `format.html` line. Add the corresponding `create.js.erb file` in the Chores view directory since our controller will look for such `.js.erb` file upon formatting as javascript.
 
 	Now, we should have a working form for adding new Chores!
 

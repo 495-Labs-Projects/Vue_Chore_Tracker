@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   # factory blueprint for children
   factory :child do
     first_name "Alex"
