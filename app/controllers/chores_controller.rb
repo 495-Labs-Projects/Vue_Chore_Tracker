@@ -38,7 +38,7 @@ class ChoresController < ApplicationController
           # render action: 'show', status: :created, location: @chore 
       else
         format.html { render action: 'new' }
-        format.js
+        format.js { render :json => @chore.errors, :status => 422 }
       end
     end
   end

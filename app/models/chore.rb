@@ -4,7 +4,7 @@ class Chore < ActiveRecord::Base
   belongs_to :task
 
   # Validations
-  validates_date :due_on
+  validates_date :due_on, :after => lambda { Date.today }, :before_message => "cannot be in the past", allow_blank: true, on: :create
   
   # Scopes
   scope :by_task, -> { joins(:task).order('tasks.name') }

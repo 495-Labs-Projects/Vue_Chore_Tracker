@@ -39,6 +39,12 @@
 
 <!-- v-if renders the internal div if the Vue element evaluates to true -->
 <div v-if="modal_open">
+    <div v-if="errors">
+      <h1>Errors</h1>
+    </div>
+    <div v-for="(value, key) in errors_obj">
+      <h3>{{key}}: {{value}}</h3>
+    </div>
   <h3>New Chore</h3>
   <new-chore-form></new-chore-form>
 </div>
@@ -70,6 +76,7 @@
 <!-- Component to add a new form -->
 <script type="text/x-template" id="new-chore-form">
   <div>
+
 <% @chore = Chore.new() %>
 <%= render 'vue_form' %>
 

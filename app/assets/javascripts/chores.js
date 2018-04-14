@@ -1,11 +1,3 @@
-var init;
-
-var initialize = function(){
-  if (init){
-    init();
-  }
-}
-
 // app/assets/javascripts/chores.js
 $(document).on('ready', function() {
 
@@ -18,10 +10,16 @@ $(document).on('ready', function() {
       url: link,
       success: function(res) {
         chores.modal_open = false;
+        chores.clear_errors();
         callback(res);
       },
       error: function(res) {
-        that.errors = res.responseJSON.errors
+        console.log("failed");
+        chores.update_errors(JSON.parse(res.responseText));
+        // new_form.update_errors(JSON.parse(res.responseText));
+        console.log(chores.errors);
+        // Add error callback
+        // Format with mixin
       }
     })
   }
@@ -63,7 +61,7 @@ $(document).on('ready', function() {
           child_id: 0,
           task_id: 0,
           due_on: '', 
-          completed: false
+          completed: false,
       }
     },
     methods: {
@@ -117,7 +115,9 @@ $(document).on('ready', function() {
         child_id: 0,
         task_id: 0,
         completed: 0,
-        due_on: ''
+        due_on: '',
+        errors: false,
+        errors_obj: {}
       }
     },
     // This function runs after the elements on the page are set
@@ -178,6 +178,14 @@ $(document).on('ready', function() {
       },
       remove_chore: function(id){
         run_ajax('DELETE', {chore: this.new_post}, '/chores/'.concat(id, '.js'));       
+      },
+      update_errors: function(e){
+        Vue.set(chores, "errors", true);
+        Vue.set(chores, "errors_obj", e);
+      },
+      clear_errors: function(){
+        Vue.set(chores, "errors", false);
+        Vue.set(chores, "errors_obj", {});
       }
     },
   });
